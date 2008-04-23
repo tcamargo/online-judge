@@ -1,107 +1,127 @@
-/*   @JUDGE_ID:   6380MH   103   C   ""   */
-
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdlib.h>
 
 #define IN  "p103.in"
 #define OUT "p103.out"
 
-unsigned int box[30][10];
+typedef struct box { 
+	int d[10];
+} box;
 
-int find_nest(unsigned int *a, unsigned int *b, int unsigned n) {
+void printbox(box ins, int ndim) {
 	int i;
-	for(i = 0; i < n; i++)
-		if (a[i] >= b[i]) return 0;
+	
+	for(i = 0; i < ndim; i++)
+		printf("%i ", ins.d[i]);
+	printf("\n");
+}
+
+int compar(const void *a, const void *b) {
+	return *((int*)a) - *((int*)b); 
+}
+
+int nest(const box *a, const box *b, const int dim) {
+	int i;
+	
+	for(i = 0; i < dim; i++)
+		if (a->d[i] >= b->d[i]) return 0;
+	
 	return 1;
 }
 
 int main(int argc, char *argv[]) {
 	
-	unsigned int k, n, i, j, m;
-	unsigned int nest, work_nest, previous;
-	unsigned int ordered[10];
-	unsigned int sequence[10], sequence1[10];
-	unsigned int *s, *sw, *tmp;
-
 #ifndef ONLINE_JUDGE
-  close (0); open(IN, O_RDONLY);
-//  close (1); open(OUT, O_WRONLY | O_CREAT, 0600);
+	close (0); open(IN, O_RDONLY);
+//	close (1); open(OUT, O_WRONLY | O_CREAT, 0600);
 #endif
+
+	int nbox, ndim;
+	box instancia[30];
+	int matriz[30][30];
+	int nestcont[30];
+	int i, j;
+	int best;
+	int nbest;
+	
+	int resp[30];
+	int respt;
+	
 	while (!feof(stdin)) {
-		/* Input read */
-	   if (scanf("%u %u\n", &k, &n) == 2) {
-         for(i = 0; i < k; i++) {
-         	for(j = 0; j < n; j++) {
-         		scanf("%u", &box[i][j]);
-         	}
-            ordered[i] = i;
-         }
-      } else {
-      	break;
-      }
-      
-      
-      /* Element sort */
-      for(i = 0; i < k; i++) {
-      	/* bubble sort */
-         for(j = 0; j < n; j++) {
-            for(m = j + 1; m < n; m++) {
-            	if (box[i][j] > box[i][m]) {
-            	   box[i][j] ^= box[i][m];
-            	   box[i][m] ^= box[i][j];
-            	   box[i][j] ^= box[i][m];
-            	}
-            }
-         }
-      }
-      
-      /* Box sort */
-      for(i = 0; i < k; i++) {
-      	/* bubble sort */
-      	for(m = i + 1; m < k; m++) {
-      		if (box[ordered[i]][0] > box[ordered[m]][0]) {
-      			ordered[i] ^= ordered[m];
-      			ordered[m] ^= ordered[i];
-      			ordered[i] ^= ordered[m];
-      		}
-      	}
-      }
-      
-      /* Find nests */
-      nest = 1;
-      s  = sequence;
-      sw = sequence1;
-      for(i = 0; i < k; i++) {
-      	work_nest = 1;
-      	sw[0] = ordered[i];
-      	if ((k - i) < nest) break; /* we already get a good one */
-      	previous = ordered[i];
-      	/* nests */
-      	for(m = i + 1; m < k; m++) {
-      		if (find_nest(box[previous],box[ordered[m]],n)) {
-      			work_nest++;
-      			sw[work_nest - 1] = ordered[m];
-      			previous = ordered[m];
-      		}
-      	}
-      	if (work_nest >= nest) {
-      		nest = work_nest;
-      		tmp = s;  /* save sequence */
-      		s  = sw; 
-      		sw = tmp;
-      	}
-      }
-            
-/*      for(i = 0; i < k; i++) {
-         for(j = 0; j < n; j++)
-            printf("Box %u Vertex %u = %u\n", i, j, box[i][j]);
-      }*/	
-      printf("%u\n", nest);
-      for(i = 0; i < nest-1; i++)
-      	printf("%u ",s[i]+1);
-      printf("%u\n",s[i]+1);
-            
- 	}
+		/* instancia */
+		if (scanf("%i %i", &nbox, &ndim) != 2) break;
+		/* printf("%i caixas com %i dimensoes\n", nbox, ndim); */
+		for(i = 0; i < nbox; i++) {
+			for(j = 0; j < ndim; j++)
+				scanf("%i", &instancia[i].d[j]);
+			/* printbox(instancia[i], ndim); */
+		}
+		
+		/* ordena dimensoes das caixas */
+		for(i = 0; i < nbox; i++) {
+			qsort(instancia[i].d, ndim, sizeof(int), &compar);
+			/* printbox(instancia[i], ndim);*/
+		}
+
+		/* constroi matriz de encaixe */
+		best = 0;
+		for(i = 0; i < nbox; i++) {
+			nestcont[i] = 1;
+			for(j = 0; j < nbox; j++) {
+				if (i==j) {
+					matriz[i][j] = 0;
+					continue; /* mesma caixa */
+				}
+				if (nest(&instancia[i], &instancia[j], ndim)) {
+					/*printf("%i entra em %i\n", i, j); */
+					nestcont[i]++;
+					matriz[i][j] = 1;				
+				} else {
+					/*printf("%i nao entra em %i\n", i, j);*/
+					matriz[i][j] = 0;
+				}
+					
+			}
+			if (nestcont[best] < nestcont[i])
+				best = i;			
+		}
+		
+		/*for(i = 0; i < nbox; i++) {
+			for(j = 0; j < nbox; j++) {
+				printf("%i ", matriz[i][j]);
+			}
+			printf("| %i\n", nestcont[i]);
+		}*/
+		
+		/*printf("melhor %i\n", best);*/
+		respt = 0;
+		resp[respt++] = best;
+		while (nestcont[best] != 1) {
+			nbest = -1;
+			for(i = 0; i < nbox; i++) {
+				if (matriz[best][i] == 1) {
+					if ((nbest == -1) || (nestcont[i] > nestcont[nbest]))
+						nbest = i;	/* proxima da lista*/
+				}
+			}
+			best = nbest;
+			/*printf("melhor %i\n", best);*/
+			resp[respt++] = best;
+		}
+		
+		/* Resposta!!!*/
+		printf("%i\n", respt);
+		for(i = 0; i < respt; i++)
+			if (i == 0)
+				printf("%i", resp[i]+1);
+			else
+				printf(" %i", resp[i]+1);
+		printf("\n");
+		
+		
+	}
+  	
 	return 0;
 }
