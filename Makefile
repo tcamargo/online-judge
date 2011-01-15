@@ -1,4 +1,4 @@
-CFLAGS = -g -lm -lcrypt
+CFLAGS = -g -lm 
 CXX = g++
 CC = gcc
 problems = p100 p101 p102 p103 p113 p131 p144
