@@ -21,7 +21,8 @@
 int main(int argc, char *argv[]) {
 
   unsigned int b1, g1, c1, b2, g2, c2, b3, g3, c3;
-  unsigned int mov = -1, t;
+  int mov = -1;
+  unsigned int t;
   char c[4] = "TI!";
 
 #ifndef ONLINE_JUDGE
