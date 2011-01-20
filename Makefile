@@ -2,13 +2,11 @@ CFLAGS = -g
 CXXFLAGS = $(CFLAGS)
 CXX = g++
 CC = gcc
-problems = p100 p101 p102 p103 p113 p131 p144
+PROBLEMS = $(patsubst %.c, %, $(wildcard *.c))
+PROBLEMS += $(patsubst %.cpp, %, $(wildcard *.cpp))
 
-all:	$(problems)
-
-$(problems):
-	$(CXX) $(CFLAGS) $@.c* -o $@
+all: $(PROBLEMS)
 
 .PHONY:	clean
 clean:
-	rm -f $(problems) *.o 
+	rm -f $(PROBLEMS)
