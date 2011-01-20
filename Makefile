@@ -1,5 +1,5 @@
-CFLAGS = -g -O2 -pipe
-CXXFLAGS = $(CFLAGS)
+CXXFLAGS = -g -O2 -pipe
+CFLAGS = $(CXXFLAGS) -ansi
 LDFLAGS = -lm -lcrypt
 CXX = g++
 CC = gcc
