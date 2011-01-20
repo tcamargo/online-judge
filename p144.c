@@ -15,9 +15,9 @@ int main (int argc, char const* argv[]) {
 
 #ifndef ONLINE_JUDGE
 	close(0); open("/home/scm/online-judge/p144.in", O_RDONLY);
-	//close(1); open("/home/scm/online-judge/p144.out", O_WRONLY | O_CREAT, 0600);
+	/* close(1); open("/home/scm/online-judge/p144.out", O_WRONLY | O_CREAT, 0600); */
 #endif
-	
+
 	for(;;) {
 		scanf("%i %i\n", &N, &k);
 		if(N == 0) return 0;
@@ -58,8 +58,8 @@ int main (int argc, char const* argv[]) {
 
 		/* */
 
-		
-		
+
+
 	}
 
 	return 0;
