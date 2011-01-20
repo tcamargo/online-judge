@@ -16,7 +16,7 @@ int main (int argc, char const* argv[]) {
 
 #ifndef ONLINE_JUDGE
 	close(0); open("/home/scm/online-judge/p113.in", O_RDONLY);
-//	close(1); open("/home/scm/online-judge/p113.out", O_WRONLY | O_CREAT, 0600);
+    /*	close(1); open("/home/scm/online-judge/p113.out", O_WRONLY | O_CREAT, 0600); */
 #endif
 
 	while (scanf("%lf\n", &n) == 1) {
