@@ -1,10 +1,15 @@
+#+STARTUP: align
 * Problems
-| No. | Status |
-| 100 | OK     |
-| 101 | OK     |
-| 102 | OK     |
-| 103 | OK     |
-| 113 | OK     |
-| 131 | wip    |
-| 144 | OK     |
+
+  | No. | Title                    | Status       |
+  |-----+--------------------------+--------------|
+  | 100 | The 3n + 1 problem       | Accepted     |
+  | 101 | The Blocks Problem       | Accepted     |
+  | 102 | Ecological Bin Packing   | Accepted     |
+  | 103 | Stacking Boxes           | Accepted     |
+  | 113 | Power of Cryptography    | Accepted     |
+  | 131 | The Psychic Poker Player | Wrong answer |
+  | 144 | Student Grants           | Accepted     |
+
+
 
