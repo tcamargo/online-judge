@@ -1,4 +1,5 @@
-CFLAGS = -g -lm 
+CFLAGS = -g
+CXXFLAGS = $(CFLAGS)
 CXX = g++
 CC = gcc
 problems = p100 p101 p102 p103 p113 p131 p144
