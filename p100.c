@@ -15,11 +15,11 @@ int main(int argc, char **argv) {
 
 #ifndef ONLINE_JUDGE
   close (0); open(IN, O_RDONLY);
-   /*  close (1); open(OUT, O_WRONLY | O_CREAT, 0600)/ */
+  /*  close (1); open(OUT, O_WRONLY | O_CREAT, 0600)/ */
 #endif
 
   while (scanf("%i %i", &i, &j) == 2) {
-    if (j < i) {   // swap(i, j) :)
+    if (j < i) {   /* swap(i, j) :) */
       s = 1;
       i ^= j;
       j ^= i;
@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
       }
       c = (c < c1) ? c1 : c;
     }
-    if (s)      // Is swaped?
+    if (s)      /* Is swaped? */
       printf("%i %i %i\n", j, i, c);
     else
       printf("%i %i %i\n", i, j, c);
