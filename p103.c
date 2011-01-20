@@ -6,36 +6,36 @@
 #define IN  "p103.in"
 #define OUT "p103.out"
 
-typedef struct box { 
+typedef struct box {
 	int d[10];
 } box;
 
 void printbox(box ins, int ndim) {
 	int i;
-	
+
 	for(i = 0; i < ndim; i++)
 		printf("%i ", ins.d[i]);
 	printf("\n");
 }
 
 int compar(const void *a, const void *b) {
-	return *((int*)a) - *((int*)b); 
+	return *((int*)a) - *((int*)b);
 }
 
 int nest(const box *a, const box *b, const int dim) {
 	int i;
-	
+
 	for(i = 0; i < dim; i++)
 		if (a->d[i] >= b->d[i]) return 0;
-	
+
 	return 1;
 }
 
 int main(int argc, char *argv[]) {
-	
+
 #ifndef ONLINE_JUDGE
 	close (0); open(IN, O_RDONLY);
-//	close (1); open(OUT, O_WRONLY | O_CREAT, 0600);
+    /*	close (1); open(OUT, O_WRONLY | O_CREAT, 0600); */
 #endif
 
 	int nbox, ndim;
@@ -45,10 +45,10 @@ int main(int argc, char *argv[]) {
 	int i, j;
 	int best;
 	int nbest;
-	
+
 	int resp[30];
 	int respt;
-	
+
 	while (!feof(stdin)) {
 		/* instancia */
 		if (scanf("%i %i", &nbox, &ndim) != 2) break;
@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
 				scanf("%i", &instancia[i].d[j]);
 			/* printbox(instancia[i], ndim); */
 		}
-		
+
 		/* ordena dimensoes das caixas */
 		for(i = 0; i < nbox; i++) {
 			qsort(instancia[i].d, ndim, sizeof(int), &compar);
@@ -77,24 +77,24 @@ int main(int argc, char *argv[]) {
 				if (nest(&instancia[i], &instancia[j], ndim)) {
 					/*printf("%i entra em %i\n", i, j); */
 					nestcont[i]++;
-					matriz[i][j] = 1;				
+					matriz[i][j] = 1;
 				} else {
 					/*printf("%i nao entra em %i\n", i, j);*/
 					matriz[i][j] = 0;
 				}
-					
+
 			}
 			if (nestcont[best] < nestcont[i])
-				best = i;			
+				best = i;
 		}
-		
+
 		/*for(i = 0; i < nbox; i++) {
 			for(j = 0; j < nbox; j++) {
 				printf("%i ", matriz[i][j]);
 			}
 			printf("| %i\n", nestcont[i]);
 		}*/
-		
+
 		/*printf("melhor %i\n", best);*/
 		respt = 0;
 		resp[respt++] = best;
@@ -110,7 +110,7 @@ int main(int argc, char *argv[]) {
 			/*printf("melhor %i\n", best);*/
 			resp[respt++] = best;
 		}
-		
+
 		/* Resposta!!!*/
 		printf("%i\n", respt);
 		for(i = 0; i < respt; i++)
@@ -119,9 +119,9 @@ int main(int argc, char *argv[]) {
 			else
 				printf(" %i", resp[i]+1);
 		printf("\n");
-		
-		
+
+
 	}
-  	
+
 	return 0;
 }
