@@ -5,6 +5,9 @@
 #include <string.h>
 #include <unistd.h>
 
+#define IN  "p144.in"
+#define OUT "p144.out"
+
 int main (int argc, char const* argv[]) {
 
 	int N,k;
@@ -14,8 +17,8 @@ int main (int argc, char const* argv[]) {
 	char std[25];
 
 #ifndef ONLINE_JUDGE
-	close(0); open("/home/scm/online-judge/p144.in", O_RDONLY);
-	/* close(1); open("/home/scm/online-judge/p144.out", O_WRONLY | O_CREAT, 0600); */
+	close(0); open(IN, O_RDONLY);
+	/* close(1); open(OUT, O_WRONLY | O_CREAT, 0600); */
 #endif
 
 	for(;;) {
