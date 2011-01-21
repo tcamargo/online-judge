@@ -8,6 +8,9 @@
 #include <sys/types.h>
 #include <string.h>
 
+#define IN  "p131.in"
+#define OUT "p131.out"
+
 char mao_num[11];
 char mao_naipe[10];
 char compra_num[5];
@@ -55,8 +58,8 @@ int avalia(int x) {
 
 int main (int argc, char const* argv[]) {
 #ifndef ONLINE_JUDGE
-	close(0); open("/home/scm/online-judge/p131.in", O_RDONLY);
-//	close(1); open("/home/scm/online-judge/p131.out", O_WRONLY | O_CREAT, 0600);
+	close(0); open(IN, O_RDONLY);
+//	close(1); open(OUT, O_WRONLY | O_CREAT, 0600);
 #endif
 	while (1) {
 		memset(mao_num, 0, sizeof(mao_num));
