@@ -1,5 +1,5 @@
 ARCH := $(shell uname)
-CXXFLAGS = -g -O2 -pipe
+CXXFLAGS = -g -pipe
 CFLAGS = $(CXXFLAGS) -ansi
 LDFLAGS = -lm
 ifneq ($(ARCH), Darwin)
