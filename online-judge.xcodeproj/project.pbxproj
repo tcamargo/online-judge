@@ -1,0 +1,167 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		AC6CDF3412E901EF00FAED0B /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		AC6CDF3812E9021900FAED0B /* p144.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = p144.in; sourceTree = "<group>"; };
+		AC6CDF3912E9023400FAED0B /* p100.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = p100.in; sourceTree = "<group>"; };
+		AC6CDF3A12E9023400FAED0B /* p101.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = p101.in; sourceTree = "<group>"; };
+		AC6CDF3B12E9023400FAED0B /* p102.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = p102.in; sourceTree = "<group>"; };
+		AC6CDF3C12E9023400FAED0B /* p103.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = p103.in; sourceTree = "<group>"; };
+		AC6CDF3D12E9023400FAED0B /* p113.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = p113.in; sourceTree = "<group>"; };
+		AC6CDF3E12E9023400FAED0B /* p131.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = p131.in; sourceTree = "<group>"; };
+		AC6CDF3F12E9025600FAED0B /* p100.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = p100.c; sourceTree = "<group>"; };
+		AC6CDF4012E9025600FAED0B /* p101.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = p101.cpp; sourceTree = "<group>"; };
+		AC6CDF4112E9025600FAED0B /* p102.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = p102.c; sourceTree = "<group>"; };
+		AC6CDF4212E9025600FAED0B /* p103.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = p103.c; sourceTree = "<group>"; };
+		AC6CDF4312E9025600FAED0B /* p113.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = p113.c; sourceTree = "<group>"; };
+		AC6CDF4412E9025600FAED0B /* p131.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = p131.cpp; sourceTree = "<group>"; };
+		AC6CDF4512E9025600FAED0B /* p144.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = p144.c; sourceTree = "<group>"; };
+		AC6CDF4612E9025600FAED0B /* README.org */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.org; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* online-judge */ = {
+			isa = PBXGroup;
+			children = (
+				AC6CDF3F12E9025600FAED0B /* p100.c */,
+				AC6CDF4012E9025600FAED0B /* p101.cpp */,
+				AC6CDF4112E9025600FAED0B /* p102.c */,
+				AC6CDF4212E9025600FAED0B /* p103.c */,
+				AC6CDF4312E9025600FAED0B /* p113.c */,
+				AC6CDF4412E9025600FAED0B /* p131.cpp */,
+				AC6CDF4512E9025600FAED0B /* p144.c */,
+				AC6CDF4612E9025600FAED0B /* README.org */,
+				AC6CDF3712E901FC00FAED0B /* Inputs */,
+				AC6CDF3412E901EF00FAED0B /* Makefile */,
+			);
+			name = "online-judge";
+			sourceTree = "<group>";
+		};
+		AC6CDF3712E901FC00FAED0B /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				AC6CDF3912E9023400FAED0B /* p100.in */,
+				AC6CDF3A12E9023400FAED0B /* p101.in */,
+				AC6CDF3B12E9023400FAED0B /* p102.in */,
+				AC6CDF3C12E9023400FAED0B /* p103.in */,
+				AC6CDF3D12E9023400FAED0B /* p113.in */,
+				AC6CDF3E12E9023400FAED0B /* p131.in */,
+				AC6CDF3812E9021900FAED0B /* p144.in */,
+			);
+			name = Inputs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		D28A88AD04BDD90700651E21 /* online-judge */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 1DEB918F08733D9F0010E9CD /* Build configuration list for PBXLegacyTarget "online-judge" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			dependencies = (
+			);
+			name = "online-judge";
+			passBuildSettingsInEnvironment = 1;
+			productName = "online-judge";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "online-judge" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* online-judge */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D28A88AD04BDD90700651E21 /* online-judge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB919008733D9F0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "online-judge";
+			};
+			name = Debug;
+		};
+		1DEB919108733D9F0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "online-judge";
+			};
+			name = Release;
+		};
+		1DEB919408733D9F0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB919508733D9F0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB918F08733D9F0010E9CD /* Build configuration list for PBXLegacyTarget "online-judge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB919008733D9F0010E9CD /* Debug */,
+				1DEB919108733D9F0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "online-judge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB919408733D9F0010E9CD /* Debug */,
+				1DEB919508733D9F0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
