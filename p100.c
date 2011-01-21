@@ -39,9 +39,9 @@ int main(int argc, char **argv) {
       c = (c < c1) ? c1 : c;
     }
     if (s)      /* Is swaped? */
-      printf("%i %i %i\n", j, i, c);
+      printf("%i %i %llu\n", j, i, c);
     else
-      printf("%i %i %i\n", i, j, c);
+      printf("%i %i %llu\n", i, j, c);
     c = 1;
     s = 0;
   }
